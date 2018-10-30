@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> LGBT Families in the U.S. </title>
+        <link rel="stylesheet" href="styles/new_main.css">
+        <link href="https://fonts.googleapis.com/css?family=Karla|Crimson+Text" rel="stylesheet">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <script src="https://code.highcharts.com/modules/export-data.js"></script>
+	</head>
+	<body>
+        <header>
+            <h1> LGBT Families in the United States </h1>
+            <p>by Vincent McDonald</p>
+        </header>
+
+        <article>
+            <h2>Background</h2>
+            <p>The perceived acceptance of the United States’ LGBT community increased significantly within the past decade, according to <a href=" http://www.pewresearch.org/fact-tank/2017/06/13/5-key-findings-about-lgbt-americans/" target="_blank"> Pew Research Center data.</a> However, myths and stereotypes about LGBT parenthood persist.  Homophobic rhetoric often claims that gay couples are not fit to raise children. Meanwhile, the reproductive ability of LGBT people is rarely acknowledged, despite the fact that adoption is not the only means by which same-gender couples can start families. For example, transgender men can experience <a href="https://en.wikipedia.org/wiki/Transgender_pregnancy" target="_blank">healthy pregnancies</a> regardless of how they transition.</p>
+
+            <p>Data from the Pew Research Center and the United States Census Bureau below provides insight on what families headed by LGBT parents look like. </p>
+        </article>
+
+        <div id="container" style= "min-width: 310px; height: 400px; margin: 0 auto"></div>
+        <script>
+            Highcharts.chart('container', {
+
+            title: {
+            text: 'Percentage of households with own children by gender of parents, 2006 to 2016'
+            },
+
+            subtitle: {
+            text: 'Source: U.S. Census Bureau'
+            },
+
+            xAxis: {
+                categories: ['2006', '2013', '2016']
+            },
+
+            yAxis: {
+            title: {
+              text: 'Percent of households with own children'
+            }
+            },
+
+
+            legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle'
+            },
+
+            plotOptions: {
+            series: {
+              label: {
+                connectorAllowed: false
+              },
+            }
+            },
+
+            series: [{
+            name: 'Married Man and Woman',
+            data: [43.5, 39.9, 39.1]
+            }, {
+            name: 'Two Men',
+            data: [22.4, 9.2, 9.2]
+            }, {
+            name: 'Two Women',
+            data: [27, 20.7, 21.9]
+            }],
+
+            responsive: {
+            rules: [{
+              condition: {
+                maxWidth: 500
+              },
+              chartOptions: {
+                legend: {
+                  layout: 'horizontal',
+                  align: 'center',
+                  verticalAlign: 'bottom'
+                }
+              }
+            }]
+            }
+
+            });
+        </script>
+
+        <section>
+            <p> Above data sourced from the 2006, 2013 and 2016 tables on characteristics of same-gender couple households compiled by the U.S. Census Bureau. Click <a href="https://www.census.gov/data/tables/time-series/demo/same-sex-couples/ssc-house-characteristics.html" target="_blank">here</a> to download the data. </p>
+        </section>
+
+        <div id="container_desire" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+        <script>
+            Highcharts.chart('container_desire', {
+                chart: {
+                    type: 'column'
+                },
+                title: {
+                    text: "Desire to have children someday in LGBT adults"
+                },
+                subtitle: {
+                    text: 'Source: Pew Research Center'
+                },
+                xAxis: {
+                    categories: [
+                        'Yes',
+                        'No',
+                        'Not sure'
+                    ],
+                    crosshair: true
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Number of responses'
+                    }
+                },
+                tooltip: {
+                    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                        '<td style="padding:0"><b>{point.y} responses</b></td></tr>',
+                    footerFormat: '</table>',
+                    shared: true,
+                    useHTML: true
+                },
+                plotOptions: {
+                    column: {
+                        pointPadding: 0.2,
+                        borderWidth: 0
+                    }
+                },
+                series: [{
+                    name: 'Childless LGBT adults age 18-59',
+                    data: [175, 264, 160]
+                }]
+            });
+        </script>
+
+        <section>
+            <p> Above data sourced from the 2013 Survey of LGBT Adults conducted by the Pew Research Center. Question 96 of the survey asked childless respondents between the ages of 18 and 59 "Would you yourself like to have children someday or not?" Charted are the responses. A total of 1,197 LGBT adults participated in the survey. Click <a href="http://www.pewsocialtrends.org/2014/09/18/2013-survey-of-lgbt-adults/" target="_blank">here</a> to download the data.</p>
+        </section>
+
+        <footer>
+            <p> This website was designed as part of an assignment for JOU 3363: Intro to Web Apps at the University of Florida. </p>
+        </footer>
+
+	</body>
+</html>
